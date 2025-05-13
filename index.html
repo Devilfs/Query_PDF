@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query PDF</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="upload-section">
+            <h1>Query PDF</h1>
+            <div class="file-input-group">
+                <label class="upload-label">
+                    <input type="file" id="pdfUpload" accept=".pdf" hidden>
+                    <span class="button">Select PDF</span>
+                    <span id="selectedFile" class="file-name">No file selected</span>
+                </label>
+                <button onclick="uploadPdf()" class="button">Upload</button>
+            </div>
+            <div id="uploadStatus" class="status-message"></div>
+        </div>
+
+        <div id="chatSection" class="hidden">
+            <div class="file-info">
+                <span id="uploadedFileName" class="file-name"></span>
+            </div>
+            <div class="chat-interface">
+                <div id="chatHistory" class="chat-history"></div>
+                <div class="input-group">
+                    <input type="text" id="questionInput" 
+                           class="question-input" 
+                           placeholder="Ask a question about the PDF...">
+                    <button onclick="askQuestion()" class="button ask-btn">Ask</button>
+                </div>
+                <div id="questionStatus" class="status-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
